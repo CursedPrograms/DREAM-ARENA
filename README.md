@@ -2,7 +2,7 @@
 
 A Unity project where the DREAM Robotics fleet learns in simulation before trying it for real. It's built from **module scripts** that behave like the real parts (ultrasonic sensors, line sensors, servos, mecanum wheels, an IMU), and uses **Unity ML-Agents** to teach the robots: WHIP to walk, and NORA to drive without hitting things and to follow a line.
 
-> **Status:** the scripts are written but haven't been compiled in Unity yet. The first batch build stopped because the disk was full while Unity installed the ML-Agents package. Open the project once there's space, let the packages install, then use the **DREAM ARENA** menu.
+> **Status:** compiles in Unity 6000.6.2f1 with ML-Agents 4.1.0 (4.0.0 doesn't build on Unity 6.6). The three training scenes are built, and **DREAM ARENA › Self-test** passes: NORA's sonar reads a wall at the right distance, her line sensors see tape, she drives and strafes straight, and WHIP stands level on his 18 servos and follows them. Training itself hasn't been run yet.
 
 ---
 
