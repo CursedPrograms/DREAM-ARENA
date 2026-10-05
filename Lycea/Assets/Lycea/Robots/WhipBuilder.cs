@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using DreamArena.Modules;
+using Lycea.Modules;
 using UnityEngine;
 
-namespace DreamArena.Robots
+namespace Lycea.Robots
 {
     /// <summary>
     /// WHIP from primitives: a hexapod with three servos per leg (coxa swings

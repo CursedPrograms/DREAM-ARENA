@@ -1,11 +1,11 @@
-using DreamArena.Arena;
-using DreamArena.Robots;
+using Lycea.Arena;
+using Lycea.Robots;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace DreamArena.Agents
+namespace Lycea.Agents
 {
     /// <summary>
     /// NORA learning to drive. She sees exactly what the real one does - four

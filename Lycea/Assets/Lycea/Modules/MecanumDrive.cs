@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Modules
+namespace Lycea.Modules
 {
     /// <summary>
     /// Four mecanum wheels on a Rigidbody (NORA's chassis). Each wheel takes a

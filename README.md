@@ -1,14 +1,14 @@
-# DREAM ARENA
+# LYCEA
 
-A Unity project where the DREAM Robotics fleet learns in simulation before trying it for real. It's built from **module scripts** that behave like the real parts (ultrasonic sensors, line sensors, servos, mecanum wheels, an IMU), and uses **Unity ML-Agents** to teach the robots: WHIP to walk, and NORA to drive without hitting things and to follow a line.
+The fleet's school, named after the Lyceum - Aristotle's school, which had its own gymnasium: learning and training in one place. A Unity project where the DREAM Robotics robots learn in simulation before trying it for real. It's built from **module scripts** that behave like the real parts (ultrasonic sensors, line sensors, servos, mecanum wheels, an IMU), and uses **Unity ML-Agents** to teach the robots: WHIP to walk, and NORA to drive without hitting things and to follow a line.
 
-> **Status:** compiles in Unity 6000.6.2f1 with ML-Agents 4.1.0 (4.0.0 doesn't build on Unity 6.6). The three training scenes are built, and **DREAM ARENA › Self-test** passes: NORA's sonar reads a wall at the right distance, her line sensors see tape, she drives and strafes straight, and WHIP stands level on his 18 servos and follows them. Training itself hasn't been run yet.
+> **Status:** compiles in Unity 6000.6.2f1 with ML-Agents 4.1.0 (4.0.0 doesn't build on Unity 6.6). The three training scenes are built, and **LYCEA › Self-test** passes: NORA's sonar reads a wall at the right distance, her line sensors see tape, she drives and strafes straight, and WHIP stands level on his 18 servos and follows them. Training itself hasn't been run yet.
 
 ---
 
 ## What's in it
 
-### Modules (`Assets/DreamArena/Modules`)
+### Modules (`Assets/Lycea/Modules`)
 | Script | Real part | Behaves like |
 | :--- | :--- | :--- |
 | `UltrasonicSensor` | HC-SR04 | 2–400 cm, a ~15° cone, -1 for "no echo" (the firmware's convention), angled surfaces lose the echo, a little noise |
@@ -17,14 +17,14 @@ A Unity project where the DREAM Robotics fleet learns in simulation before tryin
 | `ServoJoint` | hobby servo (MG996R) | `Write(degrees)` like `Servo.write()`, speed- and torque-limited |
 | `ImuSensor` | MPU6050 | pitch, roll, tilt, gyro, body-frame velocity |
 
-### Robots (`Assets/DreamArena/Robots`), built from primitives
+### Robots (`Assets/Lycea/Robots`), built from primitives
 - **NORA**: 25 × 30 cm, 1.2 kg, sensors where the real ones are: four HC-SR04s (front, right, back, left) and the line sensor under her nose.
 - **WHIP**: a hexapod with 18 servos (coxa, femur, tibia per leg) as one ArticulationBody tree, the MPU6050 in the body and an HC-SR04 at the front. Built standing: every servo at 90°.
 
-### Arena (`Assets/DreamArena/Arena/ArenaBuilder`)
+### Arena (`Assets/Lycea/Arena/ArenaBuilder`)
 A 4 × 4 m room, walls, boxes that move every episode, and optionally a black-tape oval for line following.
 
-### Agents (`Assets/DreamArena/Agents`)
+### Agents (`Assets/Lycea/Agents`)
 | Behaviour | Robot | Sees | Does | Learns |
 | :--- | :--- | :--- | :--- | :--- |
 | `NoraAvoid` | NORA | 4 distances, 3 line sensors, her motion | forward / strafe / turn | roam without touching anything (a better Auto mode) |
@@ -35,7 +35,7 @@ Without a trained model the agents run their **heuristic**: NORA drives with W/S
 
 ## Training
 
-1. In Unity: **DREAM ARENA › Build NORA arena (obstacle avoidance)** (or line following, or WHIP). This builds a scene with six arenas side by side in `Assets/Scenes`.
+1. In Unity: **LYCEA › Build NORA arena (obstacle avoidance)** (or line following, or WHIP). This builds a scene with six arenas side by side in `Assets/Scenes`.
 2. Run `train.bat NoraAvoid` (or `NoraLine`, `WhipWalk`). The first run uses [uv](https://docs.astral.sh/uv/) to set up Python 3.10 and `mlagents` 1.1.0 in `venv\`.
 3. When it says it's listening, press **Play** in Unity.
 4. The model lands in `results\<name>\<name>.onnx`. Drop it on the agent's **Behavior Parameters › Model**. Running `train.bat` again resumes where it stopped.

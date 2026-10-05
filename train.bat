@@ -1,5 +1,5 @@
 @echo off
-REM train.bat - teach a robot in DREAM ARENA with ML-Agents.
+REM train.bat - teach a robot at LYCEA, the fleet's school, with ML-Agents.
 REM   train.bat NoraAvoid      (or NoraLine, WhipWalk)
 REM Then press Play in Unity on the matching scene (Assets/Scenes/NORA_Avoid, NORA_Line, WHIP_Walk).
 REM ML-Agents needs Python 3.10: uv fetches it into .\venv the first time.

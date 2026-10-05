@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Modules
+namespace Lycea.Modules
 {
     /// <summary>
     /// MPU6050 (WHIP watches it for tipping): pitch and roll in degrees, the

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Modules
+namespace Lycea.Modules
 {
     /// <summary>
     /// HC-SR04 ultrasonic sensor, as the robots read it: distance in cm along

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Modules
+namespace Lycea.Modules
 {
     /// <summary>
     /// One channel of a line tracking sensor (NORA has three: L / M / R on GPIO

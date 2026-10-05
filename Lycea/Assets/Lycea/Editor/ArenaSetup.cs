@@ -1,5 +1,5 @@
-using DreamArena.Agents;
-using DreamArena.Arena;
+using Lycea.Agents;
+using Lycea.Arena;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
@@ -7,26 +7,26 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace DreamArena.EditorTools
+namespace Lycea.EditorTools
 {
     /// <summary>
     /// Builds the training scenes: several arenas side by side (ML-Agents learns
     /// from all of them at once), each with its robot's agent already wired up.
-    /// Menu: DREAM ARENA > Build ... , or from the command line:
-    ///   Unity -batchmode -projectPath "Dream Arena" -executeMethod DreamArena.EditorTools.ArenaSetup.BuildAll -quit
+    /// Menu: LYCEA > Build ... , or from the command line:
+    ///   Unity -batchmode -projectPath "Lycea" -executeMethod Lycea.EditorTools.ArenaSetup.BuildAll -quit
     /// </summary>
     public static class ArenaSetup
     {
         const int Copies = 6;
         const float Spacing = 6f;
 
-        [MenuItem("DREAM ARENA/Build NORA arena (obstacle avoidance)")]
+        [MenuItem("LYCEA/Build NORA arena (obstacle avoidance)")]
         public static void NoraAvoid() => Build("NORA_Avoid", NoraAgent.Task.Avoid);
 
-        [MenuItem("DREAM ARENA/Build NORA arena (line following)")]
+        [MenuItem("LYCEA/Build NORA arena (line following)")]
         public static void NoraLine() => Build("NORA_Line", NoraAgent.Task.FollowLine);
 
-        [MenuItem("DREAM ARENA/Build WHIP arena (walking)")]
+        [MenuItem("LYCEA/Build WHIP arena (walking)")]
         public static void Whip() => Build("WHIP_Walk", null);
 
         public static void BuildAll()
@@ -34,7 +34,7 @@ namespace DreamArena.EditorTools
             NoraAvoid();
             NoraLine();
             Whip();
-            Debug.Log("DREAM ARENA: scenes built in Assets/Scenes");
+            Debug.Log("LYCEA: scenes built in Assets/Scenes");
         }
 
         static void Build(string name, NoraAgent.Task? noraTask)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Agents
+namespace Lycea.Agents
 {
     /// <summary>Calls onHit when this body touches something: anything but the floor
     /// (NORA: walls, boxes), or the floor too (WHIP's belly).</summary>

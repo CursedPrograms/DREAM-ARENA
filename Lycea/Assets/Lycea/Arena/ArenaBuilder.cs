@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using DreamArena.Modules;
+using Lycea.Modules;
 using UnityEngine;
 
-namespace DreamArena.Arena
+namespace Lycea.Arena
 {
     /// <summary>
     /// A room to learn in: floor, walls, a scatter of boxes that moves every

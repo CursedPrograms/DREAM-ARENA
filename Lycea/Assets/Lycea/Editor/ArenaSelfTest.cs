@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using System.Reflection;
-using DreamArena.Modules;
-using DreamArena.Robots;
+using Lycea.Modules;
+using Lycea.Robots;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace DreamArena.EditorTools
+namespace Lycea.EditorTools
 {
     /// <summary>
     /// Checks the modules and robots actually behave, by stepping the physics by
     /// hand in an empty scene: NORA's sonar sees a wall at the right distance and
     /// her line sensor sees tape, driving forward moves her forward, and WHIP
-    /// stands on his own servos. Menu: DREAM ARENA > Self-test, or
-    ///   Unity -batchmode -projectPath "Dream Arena" -executeMethod DreamArena.EditorTools.ArenaSelfTest.Run -quit
+    /// stands on his own servos. Menu: LYCEA > Self-test, or
+    ///   Unity -batchmode -projectPath "Lycea" -executeMethod Lycea.EditorTools.ArenaSelfTest.Run -quit
     /// (exits with code 1 if anything failed).
     /// </summary>
     public static class ArenaSelfTest
@@ -21,7 +21,7 @@ namespace DreamArena.EditorTools
         static int failures;
         static readonly List<MonoBehaviour> stepped = new List<MonoBehaviour>();
 
-        [MenuItem("DREAM ARENA/Self-test")]
+        [MenuItem("LYCEA/Self-test")]
         public static void Run()
         {
             failures = 0;
@@ -38,7 +38,7 @@ namespace DreamArena.EditorTools
             {
                 Physics.simulationMode = oldMode;
             }
-            Debug.Log(failures == 0 ? "DREAM ARENA self-test: ALL PASSED" : $"DREAM ARENA self-test: {failures} FAILED");
+            Debug.Log(failures == 0 ? "LYCEA self-test: ALL PASSED" : $"LYCEA self-test: {failures} FAILED");
             if (Application.isBatchMode) EditorApplication.Exit(failures == 0 ? 0 : 1);
         }
 

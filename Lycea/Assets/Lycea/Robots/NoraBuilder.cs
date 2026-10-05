@@ -1,7 +1,7 @@
-using DreamArena.Modules;
+using Lycea.Modules;
 using UnityEngine;
 
-namespace DreamArena.Robots
+namespace Lycea.Robots
 {
     /// <summary>
     /// NORA from primitives, with her real sensor layout: four HC-SR04s (front,

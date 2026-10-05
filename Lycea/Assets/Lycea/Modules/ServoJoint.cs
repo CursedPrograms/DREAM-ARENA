@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DreamArena.Modules
+namespace Lycea.Modules
 {
     /// <summary>
     /// A hobby servo on an ArticulationBody revolute joint: you set an angle in
