@@ -1,0 +1,1 @@
+this is basically a unity project that uses module scripts such as ultrasonic sensor scripts servo scripts etc and then uses unity ML to teach whip to walk. or wheeled robots to drive
